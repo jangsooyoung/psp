@@ -51,7 +51,7 @@ elif "image" in args:
 	<tr>
 	    <td colspan=3>
 		PSP (Python server page, python jsp ) demo page<br>
-        <a  target="_blank" href="http://github.com/jangsooyoung/psp">github.com/jangsooyoung/psp</a>
+        <a href="https://github.com/jangsooyoung/psp">https://github.com/jangsooyoung/psp</a>
         </td>
 	</tr>
 	<tr>
@@ -62,11 +62,11 @@ elif "image" in args:
 		</td>
 	</tr> 
 	<tr>
-		<td colspan=2><font size=2>-High resolution cell phone cameras. (Plate part is recommended at least 300 pix)</font>
+		<td colspan=2><font size=2>-High resolution cell phone cameras. (Plate plate part is recommended at least 300 pix)</font>
 		</td>
 	</tr>
 	<tr>
-		<td><h2><font size=6>Result : 40 조 7220</font>
+		<td><h2><font size=6>분석결과 : 00조0000</font>
 		</td>
 		<td>
 		</td>
@@ -75,10 +75,10 @@ elif "image" in args:
 	</tr>
 	<tr>
 		<td>
-			<input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="File" name="upfile"/>[jpg file]
+			<input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="카메라 또는 파일선택" name="upfile"/>[고해상도 .jpg 파일]
 		</td>
 		<td>
-			<input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="upload" name="upload" />
+			<input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="사진업로드 인식" name="upload" />
 		</td>
 	</tr>
 </table>
