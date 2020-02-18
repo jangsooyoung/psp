@@ -57,6 +57,8 @@ class Was(SimpleHTTPRequestHandler):
                 self.send_File(PspConfig.html_path + p)
             elif (p.endswith(".js") or p.endswith(".js")) and os.path.isfile(PspConfig.js_path+p):
                 self.send_File(PspConfig.js_path + p)
+            elif (p.endswith(".css") or p.endswith(".css")) and os.path.isfile(PspConfig.css_path+p):
+                self.send_File(PspConfig.css_path + p)
             elif p.endswith(".py")  and os.path.isfile(PspConfig.py_path + p):
                 self.execute_py(py_name)
             elif p.endswith(".psp") and os.path.isfile(PspConfig.psp_path + p):

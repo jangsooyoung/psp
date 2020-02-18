@@ -5,6 +5,7 @@ class PspConfig:
         PspConfig.ip         = ''
         PspConfig.port       = 40077
         PspConfig.js_path    = PspConfig.fullpath('WEB')
+        PspConfig.css_path   = PspConfig.fullpath('WEB')
         PspConfig.html_path  = PspConfig.fullpath('WEB')
         PspConfig.img_path   = PspConfig.fullpath('WEB')
         PspConfig.psp_path   = PspConfig.fullpath('WEB')

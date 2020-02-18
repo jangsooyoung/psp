@@ -9,15 +9,17 @@ psp : python jsp, python server page
 		<%{%> : block begin (default tab size 4)
 		<%}%> : block end 
 		Html code 
-	Session handler
+
+	service function
 		http_handler.getSession(): session 
 		http_handler : SimpleHTTPRequestHandler class
 
-	files
-		jsp, py, html, cs, image
+	service files
+		psp(jsp), py, html,  js, image, ...
 
-	If only path is given
-		oo.psp > oo.py > oo.html
+	If only path is given 
+      - directory service file find process
+		index.psp > index.py > index.html
 source
 	was.py : WEB Server 
 	pspconfig.py : port, directory ... setup file
