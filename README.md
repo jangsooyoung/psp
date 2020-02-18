@@ -25,11 +25,18 @@ psp : python jsp, python server page
 
 program source 
 	
-	was.py : WEB Server 
-	pspconfig.py : port, directory ... setup file
-	gen.py : generator ps file to py 
+	was.py : 
+		WEB Server 
+	pspconfig.py : 
+		port, directory ... setup file
+	gen.py : 
+		generator ps file to py 
 
-	WEB/index.psp : sample psp  code
+	WEB/index.psp : 
+		sample psp  code
+	WEB/index.PY : 
+		sample psp generate code
+
 ![index.jsp](./WEB/car/s.jpg)
 
 install : 
