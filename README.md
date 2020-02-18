@@ -39,12 +39,12 @@ program source
 
 ![index.jsp](./WEB/car/s.jpg)
 
-install : 
-	git clone https://github.com/jangsooyoung/psp.git
-setup   : 
-	cd psp
-	editing pspconfig.py 
-running : 
-	python3 was.py 
+install and test 
 
-# psp
+	install : 
+		git clone https://github.com/jangsooyoung/psp.git
+	setup   : 
+		cd psp
+		editing pspconfig.py 
+	running : 
+		python3 was.py 
