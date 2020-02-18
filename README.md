@@ -20,7 +20,7 @@ source
 	gen.py : generator ps file to py 
 
 	WEB/index.psp : sample psp  code
-
+![index.jsp](./WEB/car/s.jpg)
 setup   : pspconfig.py 
 running : python was.py 
 
