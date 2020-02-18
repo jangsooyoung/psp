@@ -37,7 +37,11 @@ program source
 	WEB/index.PY : 
 		sample psp generate code
 
-![index.jsp](./WEB/car/s.jpg)
+home page 
+	
+	psp demo : 
+		Connect with "Deep Learning module" later.
+		![index.jsp](./WEB/car/s.jpg)
 
 install and test 
 
