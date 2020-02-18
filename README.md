@@ -1,4 +1,5 @@
 psp : python jsp, python server page 
+
 	jsp functionality in python that works in a similar way to jsp
 	WEB/WAS Service 
 
@@ -20,7 +21,10 @@ psp : python jsp, python server page
 	If only path is given 
       - directory service file find process
 		index.psp > index.py > index.html
-source
+
+
+program source 
+	
 	was.py : WEB Server 
 	pspconfig.py : port, directory ... setup file
 	gen.py : generator ps file to py 
@@ -28,9 +32,12 @@ source
 	WEB/index.psp : sample psp  code
 ![index.jsp](./WEB/car/s.jpg)
 
-install : git clone https://github.com/jangsooyoung/psp.git
-setup   : cd psp
-          editing pspconfig.py 
-running : python3 was.py 
+install : 
+	git clone https://github.com/jangsooyoung/psp.git
+setup   : 
+	cd psp
+	editing pspconfig.py 
+running : 
+	python3 was.py 
 
 # psp

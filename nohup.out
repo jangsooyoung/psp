@@ -6,3 +6,13 @@ SyntaxError: invalid syntax
     self.send_error(404, f"No permission to list directory..[{path}]")
                                                                     ^
 SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "was.py", line 162, in <module>
+    server = ThreadingServer(('', cfg.port), Was)
+  File "/usr/lib/python3.6/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.6/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.6/socketserver.py", line 470, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
