@@ -146,7 +146,7 @@ class Was(SimpleHTTPRequestHandler):
         return s
 
     def session_manager():
-        print('session_list', len(Was.session_list))
+        #print('session_list', len(Was.session_list))
         base_time = time.time()
         for skey in list(Was.session_list.keys()):
             s = Was.session_list[skey]

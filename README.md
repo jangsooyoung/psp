@@ -1,17 +1,21 @@
 psp : python jsp, python server page 
 	jsp functionality in python that works in a similar way to jsp
+	WEB/WAS Service 
 
-	Html code 
-	<% python code %>
-	<%= python variable %>
-	<%{%> : block begin (default tab size 4)
-	<%}%> : block end 
-	Html code 
+	Sample PSP Code
+		Html code 
+		<% python code %>
+		<%= python variable %>
+		<%{%> : block begin (default tab size 4)
+		<%}%> : block end 
+		Html code 
+	Session handler
+		http_handler.getSession(): session 
+		http_handler : SimpleHTTPRequestHandler class
 
-	http_handler.getSession(): session 
-
-	Processable files
+	files
 		jsp, py, html, cs, image
+
 	If only path is given
 		oo.psp > oo.py > oo.html
 source
