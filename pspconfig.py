@@ -11,7 +11,7 @@ class PspConfig:
         PspConfig.py_path    = PspConfig.fullpath('WEB')
         PspConfig.gen_path   = PspConfig.fullpath('WEB')
         PspConfig.upload_path= PspConfig.fullpath('WEB/car')
-        PspConfig.tab = 1
+        PspConfig.tab = 4
         PspConfig.session_timeout = 3
         sys.path.append(PspConfig.py_path)
         sys.path.append(PspConfig.gen_path)

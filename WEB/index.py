@@ -15,21 +15,21 @@ def call_psp_(http_handler, args):
     _psp_out_.write("<title>Upload Result Page</title>\n".encode())
     _psp_out_.write("<meta http-equiv=\"Pragma\" content=\"no-cache\">\n".encode())
     _psp_out_.write("<meta http-equiv=\"Expires\" content=\"0\">\n".encode())
-    _psp_out_.write("<html>\n".encode())
+    _psp_out_.write("<html> \n".encode())
     _psp_out_.write("<title> Car/ license plate recognition</title>\n".encode())
     _psp_out_.write("<body>\n".encode())
     _psp_out_.write("<script type=\"text/javascript\">\n".encode())
     _psp_out_.write("function del(fname) { \n".encode())
-    _psp_out_.write("	yn = confirm(fname + '이미지를  삭제 하시겠습니까? ')\n".encode())
-    _psp_out_.write("	if (yn == true) {\n".encode())
-    _psp_out_.write("		location.href='/index.psp?del='+fname;\n".encode())
-    _psp_out_.write("	}\n".encode())
+    _psp_out_.write("    yn = confirm(fname + '이미지를  삭제 하시겠습니까 ? ')\n".encode())
+    _psp_out_.write("    if (yn == true) {\n".encode())
+    _psp_out_.write("        location.href='/index.psp?del='+fname;\n".encode())
+    _psp_out_.write("    } \n".encode())
     _psp_out_.write("}\n".encode())
     _psp_out_.write("</script>\n".encode())
     
     s = http_handler.getSession()
     if "cnt" not in s:
-    	s["cnt"] = 0
+        s["cnt"] = 0
     s["cnt"] += 1
     
     display_image="car/default.jpg"

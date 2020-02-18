@@ -9,7 +9,7 @@ import http.cookies
 from http import cookies
 import time
 from threading import Timer
-#global session_list
+
 
 class ThreadingServer(ThreadingMixIn, HTTPServer):
     pass
@@ -148,8 +148,7 @@ class Was(SimpleHTTPRequestHandler):
     def session_manager():
         print('session_list', len(Was.session_list))
         base_time = time.time()
-        klist = Was.session_list.keys()
-        for skey in klist:
+        for skey in list(Was.session_list.keys()):
             s = Was.session_list[skey]
             if s['last_access'] + PspConfig.session_timeout * 60 < base_time  :
                 del Was.session_list[skey]

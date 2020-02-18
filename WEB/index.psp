@@ -7,21 +7,21 @@ from pspconfig import PspConfig
 <title>Upload Result Page</title>
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<html>
+<html> 
 <title> Car/ license plate recognition</title>
 <body>
 <script type="text/javascript">
 function del(fname) { 
-	yn = confirm(fname + '이미지를  삭제 하시겠습니까? ')
-	if (yn == true) {
-		location.href='/index.psp?del='+fname;
-	}
+    yn = confirm(fname + '이미지를  삭제 하시겠습니까 ? ')
+    if (yn == true) {
+        location.href='/index.psp?del='+fname;
+    } 
 }
 </script>
 <%
 s = http_handler.getSession()
 if "cnt" not in s:
-	s["cnt"] = 0
+    s["cnt"] = 0
 s["cnt"] += 1
 
 display_image="car/default.jpg"

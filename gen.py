@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 from io import BytesIO
 import sys, os
-import PspConfig
+from pspconfig import PspConfig
 
+cfg = PspConfig()
 class Gen:
-
     begin_source = 1
     begin_var = 2
     end_mark = 3
     block_begin = 4
     block_end = 5
     line=0
-    tabsz=PspConfig.tab
+    tabsz=cfg.tab
     space="                                                                                           "
     def fileToString(self, p_file):
         with open(p_file, 'r') as file:
