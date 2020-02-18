@@ -21,8 +21,10 @@ source
 
 	WEB/index.psp : sample psp  code
 ![index.jsp](./WEB/car/s.jpg)
-setup   : pspconfig.py 
-running : python was.py 
 
-# psp
+install : git clone https://github.com/jangsooyoung/psp.git
+setup   : cd psp
+          editing pspconfig.py 
+running : python3 was.py 
+
 # psp

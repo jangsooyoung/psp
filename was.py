@@ -69,7 +69,7 @@ class Was(SimpleHTTPRequestHandler):
             elif os.path.isdir(PspConfig.html_path + p) and os.path.isfile(PspConfig.html_path + p + "index.html"):
                 self.send_File(PspConfig.html_path + p + "index.html", args)
             else:
-                self.send_error(404, f"No permission to list directory..[{path}]")
+                self.send_error(404, f"No permission to list directory..{path}")
         except Exception as e:
             traceback.print_exc(file=sys.stdout)
             self.send_response(301)

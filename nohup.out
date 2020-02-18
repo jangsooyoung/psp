@@ -1,0 +1,8 @@
+  File "was.py", line 72
+    self.send_error(404, f"No permission to list directory..[{path}]")
+                                                                    ^
+SyntaxError: invalid syntax
+  File "was.py", line 72
+    self.send_error(404, f"No permission to list directory..[{path}]")
+                                                                    ^
+SyntaxError: invalid syntax
