@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
+<title>Upload Result Page</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<html>
+<title> Car license plate recognition</title>
+<body>
+<h1>자동차번호판 인식기</h1>
+<hr>
+<font size=3>
+ <br>
+</font><font size=5>
+-. demo 구성 <br>
+</font><font size=3>
+    . WEB service 형식 <br>
+    . ubuntu 18.04      : 16.04이상 가능 <br>
+    . open cv(3.4.3.18) : 조정가능 <br>
+    . python3.6       : 3.0 이상  조정가능 <br>
+    . tenserflow(r1.11)  : <br>
+    . hardware : <strong>1 cpu 1G </strong>가상서버 <br>
+	<br>
+ <br>
+</font><font size=5>
+-. 사용법 <br>
+</font><font size=3>
+   . 휴대폰 고화질 영상 jpg 확장자로로 된 이미지 Upload <br>
+   . <strong>휴대폰에서 "파일선택" 후 카메라로 영상 활영후 "사진업로드인식"선택 </strong><br>
+   . 사진 클릭시 확대된 원본 화면 <br>
+   . 아래 링크틀릭시 기존에 Upload된 이미지 <br>
+   . [d] 선택시 업로드된 사진 삭제 <br>
+	<br>
+</font><font size=5>
+-. 유효 인식가능 범위 <br>
+</font><font size=3>
+	. 신형 일반 영업/비영업용 차랑 번호판
+    . 전체사진 해상도에 상관없이  번호판 부분이 300 pixel이상 권장 <br>
+    . 카메라각도에 따라 30%이하 왜곡된 번호판 인식가능 (조정가능하나 인식율에 영향이 큼) <br>
+    . 번호판속에 조명 등으로 난반사가 있거거나 오염이 심한 경우 인식실패 가능성 있음 <br>
+	<br>
+ <br>
+</font><font size=5>
+- 처리방식 <br>
+</font><font size=3>
+    . 영상처리를 이용한 번호판 후보 영역 추출 <br>
+    . 영상 이진화 처리 <br>
+    . deep neural networks를 이용한 문자 인식 (tensorflow) <br>
+	<br>
+ <br>
+</font><font size=5>
+- 향후 개선 사항 <br>
+</font><font size=3>
+    . 포맷을 확인 하지 못한  구형, 외교, 대형트럭 등 번호판 양식 추가등록 필요 <br>
+    . 현재 Version은 임의 수작업으로 생성된 흑백 문자영상으로 학습된 DNN망으로 구성되어 있음 <br>
+    . 따라서 이진화 영상처리 후 DNN 망에서 분석을 실시하나 영상처리 단계에서 왜곡된 이미지는 <br>
+    . 이후 DNN 단계에서 회복이 불가능함. <br>
+    . 향후 현재 Version 이미지 처리 시스템을 통한  영상자료 수집후 (자동 수집 가능) <br>
+    . 영상 처리 단계를 최소화하여 원 이미지로 DNN 학습하도록 개선 필요 <br>
+	<br>
+</ul>
+<hr>
+</font><font size=5>
+	<a href='https://www.youtube.com/watch?v=2SrnxFv5Z0s&t=7s'>분석과정 동영상</a> <br>
+	<a href='/'>[홈]</a>
+<hr>
+</font>
+</body>
+</html>
+

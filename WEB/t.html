@@ -1,0 +1,572 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
+<title>Upload Result Page</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<html>
+<title> Car/ license plate recognition</title>
+<body>
+<script type="text/javascript">
+function del(fname) {
+	yn = confirm(fname + '이미지를  삭제 하시겠습니까? ')
+	if (yn == true) {
+		location.href='/index.psp?del='+fname;
+	}
+}
+</script>
+
+
+<hr>
+<ul>
+<form ENCTYPE="multipart/form-data"  action='/index.psp' method="post"  >
+<table>
+	<tr>
+		<td colspan=2><h1><a hef='www.hanee.com'>자동차번호판 인식 테스트</a></h1></td>
+		<td><a href='/help.html?ver=0.007996558325123804'>도움말</a></td>
+	</tr>
+	<tr>
+		<td colspan=3>
+			<a href='/index.psp?image=car/default.jpg'>
+				<img src='car/default.jpg' width=600  /></a>
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size=2>-고해상도 휴대폰 카메라에 맞추어져 있습니다. (번호판 부분이 가급적 300 pix이상 권장)</font>
+		</td>
+	</tr>
+	<tr>
+		<td><h2><font size=6>분석결과 : 40조7220</font>
+		</td>
+		<td><input type="text" name="firstname" value="John">
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="카메라 또는 파일선택" name="fname"   />[고해상도 .jpg 파일]
+		</td>
+		<td>
+			<input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="사진업로드 인식" name="upload" />
+		</td>
+	</tr>
+</table>
+</form>
+<hr>
+<ul>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181114_075313.jpg">[20181114_075313.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181114_075313.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/frame_464.jpg">[frame_464.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/frame_464.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage012.jpg">[loadimage012.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage012.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15420760629462798134955778210908.jpg">[15420760629462798134955778210908.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15420760629462798134955778210908.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15420762480202478724514417083098.jpg">[15420762480202478724514417083098.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15420762480202478724514417083098.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15420765935294065685787219962413.jpg">[15420765935294065685787219962413.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15420765935294065685787219962413.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15420784982496258674439188793603.jpg">[15420784982496258674439188793603.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15420784982496258674439188793603.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15421004404183841102908687344856.jpg">[15421004404183841102908687344856.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15421004404183841102908687344856.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15421009235096097224521943857891.jpg">[15421009235096097224521943857891.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15421009235096097224521943857891.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15426216472396066648037069337748.jpg">[15426216472396066648037069337748.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15426216472396066648037069337748.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/15427052144177733605927376119966.jpg">[15427052144177733605927376119966.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/15427052144177733605927376119966.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181029_132007.jpg">[20181029_132007.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181029_132007.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181112_080446.jpg">[20181112_080446.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181112_080446.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181112_080451.jpg">[20181112_080451.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181112_080451.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181112_080508.jpg">[20181112_080508.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181112_080508.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181114_075334.jpg">[20181114_075334.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181114_075334.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181216_121721.jpg">[20181216_121721.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181216_121721.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181216_201804.jpg">[20181216_201804.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181216_201804.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_074932.jpg">[20181218_074932.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_074932.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_074933.jpg">[20181218_074933.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_074933.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_074937.jpg">[20181218_074937.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_074937.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_075150.jpg">[20181218_075150.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_075150.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_075201.jpg">[20181218_075201.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_075201.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_075204.jpg">[20181218_075204.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_075204.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_075215.jpg">[20181218_075215.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_075215.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20181218_075351.jpg">[20181218_075351.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20181218_075351.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20200201_225036.jpg">[20200201_225036.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20200201_225036.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/20200203_000003.jpg">[20200203_000003.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/20200203_000003.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/aa.jpg">[aa.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/aa.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/default.jpg">[default.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/default.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/E10.jpg">[E10.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/E10.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/frame_1228.jpg">[frame_1228.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/frame_1228.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/frame_140.jpg">[frame_140.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/frame_140.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/frame_4820.jpg">[frame_4820.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/frame_4820.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/frame_524.jpg">[frame_524.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/frame_524.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/i.jpg">[i.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/i.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage001.jpg">[loadimage001.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage001.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage002.jpg">[loadimage002.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage002.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage003.jpg">[loadimage003.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage003.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage004.jpg">[loadimage004.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage004.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage005.jpg">[loadimage005.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage005.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage006.jpg">[loadimage006.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage006.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage007.jpg">[loadimage007.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage007.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage008.jpg">[loadimage008.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage008.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage009.jpg">[loadimage009.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage009.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage01.jpg">[loadimage01.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage01.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage010.jpg">[loadimage010.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage010.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage011.jpg">[loadimage011.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage011.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage013.jpg">[loadimage013.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage013.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage014.jpg">[loadimage014.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage014.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage015.jpg">[loadimage015.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage015.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage016.jpg">[loadimage016.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage016.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage017.jpg">[loadimage017.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage017.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage018.jpg">[loadimage018.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage018.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage019.jpg">[loadimage019.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage019.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage020.jpg">[loadimage020.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage020.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage021.jpg">[loadimage021.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage021.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage022.jpg">[loadimage022.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage022.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage023.jpg">[loadimage023.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage023.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage024.jpg">[loadimage024.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage024.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage025.jpg">[loadimage025.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage025.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage026.jpg">[loadimage026.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage026.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage027.jpg">[loadimage027.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage027.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage028.jpg">[loadimage028.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage028.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage029.jpg">[loadimage029.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage029.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage030.jpg">[loadimage030.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage030.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage031.jpg">[loadimage031.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage031.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage032.jpg">[loadimage032.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage032.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage033.jpg">[loadimage033.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage033.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage034.jpg">[loadimage034.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage034.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/loadimage035.jpg">[loadimage035.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/loadimage035.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/test1.jpg">[test1.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/test1.jpg')">d</a>
+		</font>
+	</li>
+
+	<li><font size=1>
+			<a href="/index.psp?image=/car/test2.jpg">[test2.jpg]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/test2.jpg')">d</a>
+		</font>
+	</li>
+</ul>
+</hr>
+</body>
+</html>

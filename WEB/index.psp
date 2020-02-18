@@ -1,0 +1,95 @@
+<%
+import os.path
+import glob
+from pspconfig import PspConfig 
+%>
+<%import tensorflow as tf%><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
+<title>Upload Result Page</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<html>
+<title> Car/ license plate recognition</title>
+<body>
+<script type="text/javascript">
+function del(fname) { 
+	yn = confirm(fname + '이미지를  삭제 하시겠습니까? ')
+	if (yn == true) {
+		location.href='/index.psp?del='+fname;
+	}
+}
+</script>
+<%
+s = http_handler.getSession()
+if "cnt" not in s:
+	s["cnt"] = 0
+s["cnt"] += 1
+
+display_image="car/default.jpg"
+if "del" in args:
+    file_name=args["del"]
+    print('del', PspConfig.img_path + file_name)
+    if os.path.isfile(PspConfig.img_path + file_name):
+        os.remove(PspConfig.img_path  + file_name)
+        print('remove', PspConfig.img_path + file_name)
+elif "upfile" in args:
+    filename = args['upfile'].filename
+    if filename != '':
+        data = args['upfile'].file.read()
+        open(PspConfig.upload_path  + "/" + filename, "wb").write(data)
+        display_image="car/" +filename
+elif "image" in args:
+    display_image=args["image"]
+%>
+<hr>
+<ul>
+<form ENCTYPE="multipart/form-data"  action='/index.psp' method="post"  >
+<table>
+	<tr>
+		<td colspan=2><h1><a hef='www.hanee.com'>자동차번호판 인식 테스트</a></h1></td>
+		<td><a href='/help.html?ver=0.007996558325123804'>도움말</a></td>
+	</tr>
+	<tr>
+		<td colspan=3>
+			<a href='/index.psp?image=<%=display_image%>'>
+				<img src='<%=display_image%>' width=600  /></a>
+			<br>
+		</td>
+	</tr> 
+	<tr>
+		<td colspan=2><font size=2>-고해상도 휴대폰 카메라에 맞추어져 있습니다. (번호판 부분이 가급적 300 pix이상 권장)</font>
+		</td>
+	</tr>
+	<tr>
+		<td><h2><font size=6>분석결과 : 00조0000</font>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="카메라 또는 파일선택" name="upfile"/>[고해상도 .jpg 파일]
+		</td>
+		<td>
+			<input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="사진업로드 인식" name="upload" />
+		</td>
+	</tr>
+</table>
+</form>
+<hr>
+<ul>
+<%
+file_list = os.listdir(PspConfig.img_path + "/car/")
+for fname in [file for file in file_list if file.endswith(".jpg")]:%><%{%>
+	<li><font size=1>
+			<a href="/index.psp?image=/car/<%=fname%>">[<%=fname%>]</a>
+				&nbsp;&nbsp;
+			<a href="javascript:del('/car/<%=f'{fname}'%>')">d</a>
+		</font>
+	</li>
+<%}%>
+</ul>
+</hr>
+</body>
+</html>
