@@ -1,7 +1,38 @@
-<%
+<%!
+from threading import Lock, Thread
 import os.path
 import glob
 from pspconfig import PspConfig 
+import Cstool
+from  reco import Carno
+import cv2 as cv
+
+lock = Lock()
+dnn_process_count = 0
+def getDnnProcessCount(gb):
+	global dnn_process_count
+	lock.acquire()
+	dnn_process_count += gb
+	rcnt  = dnn_process_count
+	lock.release()
+	return rcnt
+
+carno = Carno('c')
+def find_process(file_name):
+	return "too slow..."
+	try:
+		car_no = None
+		rcnt = getDnnProcessCount(1)
+		print('find_process', rcnt)
+		if  rcnt == 1:
+			car_no, xml = carno.findProcess(file_name)
+			if car_no == None :
+				car_no = 'Not found'
+			return  car_no
+		return "동시에 2개을 분석하지 못해요."
+	finally :
+		getDnnProcessCount(-1)
+	return "처리중 오류가 발생했습니다."
 %>
 <%import tensorflow as tf%><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
 <title>Upload Result Page</title>
@@ -66,7 +97,7 @@ elif "image" in args:
 		</td>
 	</tr>
 	<tr>
-		<td><h2><font size=6>Result : 40 조 7220</font>
+		<td><h2><font size=6>Result : <%=find_process(PspConfig.img_path+"/"+display_image)%></font>
 		</td>
 		<td>
 		</td>
@@ -99,3 +130,8 @@ for fname in [file for file in file_list if file.endswith(".jpg")]:%><%{%>
 </hr>
 </body>
 </html>
+<%
+
+%>
+
+
