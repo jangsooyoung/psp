@@ -5,6 +5,7 @@ psp : python jsp, python server page
 
 	Sample PSP Code
 		Html code 
+		<%! declare %> : import, def function...
 		<% python code %>
 		<%= python variable %>
 		<%{%> : block begin (default tab size 4)
