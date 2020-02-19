@@ -23,6 +23,7 @@ class Was(SimpleHTTPRequestHandler):
     def do_GET(self):
         self.getSession()
         parse_info = urlparse(self.path)
+        print('do_GET=', self.path)
         args = {}
         if parse_info.query.find("=") >= 0:
             args = dict(qc.split("=") for qc in parse_info.query.split("&"))
@@ -30,8 +31,10 @@ class Was(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         self.getSession()
+        print('do_POST=', self.path)
         parse_info = urlparse(self.path)
         ctype, pdict = cgi.parse_header(self.headers.get('content-type'))
+        args = {}
         if ctype == 'multipart/form-data':
             args = cgi.FieldStorage(fp=self.rfile, headers=self.headers,
                    environ={'REQUEST_METHOD': 'POST', 'CONTENT_TYPE': self.headers['Content-Type'], })

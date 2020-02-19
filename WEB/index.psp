@@ -1,60 +1,21 @@
 <%!
-from threading import Lock, Thread
 import os.path
 import glob
 from pspconfig import PspConfig 
-import Cstool
-from  reco import Carno
-import cv2 as cv
-
-lock = Lock()
-dnn_process_count = 0
-def getDnnProcessCount(gb):
-	global dnn_process_count
-	lock.acquire()
-	dnn_process_count += gb
-	rcnt  = dnn_process_count
-	lock.release()
-	return rcnt
-
-carno = Carno('c')
-def find_process(file_name):
-	return "too slow..."
-	try:
-		car_no = None
-		rcnt = getDnnProcessCount(1)
-		print('find_process', rcnt)
-		if  rcnt == 1:
-			car_no, xml = carno.findProcess(file_name)
-			if car_no == None :
-				car_no = 'Not found'
-			return  car_no
-		return "동시에 2개을 분석하지 못해요."
-	finally :
-		getDnnProcessCount(-1)
-	return "처리중 오류가 발생했습니다."
 %>
 <%import tensorflow as tf%><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
-<title>Upload Result Page</title>
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <html> 
 <title> Car/ license plate recognition</title>
-<body>
-<script type="text/javascript">
-function del(fname) { 
-    yn = confirm(fname + '이미지를  삭제 하시겠습니까 ? ')
-    if (yn == true) {
-        location.href='/index.psp?del='+fname;
-    } 
-}
-</script>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 <%
 s = http_handler.getSession()
 if "cnt" not in s:
     s["cnt"] = 0
 s["cnt"] += 1
-
 display_image="car/default.jpg"
 if "del" in args:
     file_name=args["del"]
@@ -71,47 +32,68 @@ elif "upfile" in args:
 elif "image" in args:
     display_image=args["image"]
 %>
+<script type="text/javascript">
+function del(fname) { 
+    yn = confirm(fname + '이미지를  삭제 하시겠습니까 ? ')
+    if (yn == true) {
+        location.href='/index.psp?del='+fname;
+    } 
+}
+function car_no_find() {
+	try {
+	$.ajax({
+		url:"/carno.psp", 
+		type:'POST',
+		data: {image:"<%=display_image%>"},
+    	success: function(data){$("#car_plate_no").html(data);}
+		});
+	} catch (ex) {
+		alert(ex.message);
+	}
+}
+</script>
+<body onload="car_no_find();" >
 <hr>
 <ul>
 <form ENCTYPE="multipart/form-data"  action='/index.psp' method="post"  >
 <table>
-	<tr>
-		<td colspan=2><h1><a hef='www.hanee.com'>License Plate Recognition Test</a></h1></td>
-		<td><a href='/help.html?ver=0.007996558325123804'>HELP</a></td>
-	</tr>
-	<tr>
-	    <td colspan=3>
-		PSP (Python server page, python jsp ) demo page<br>
+    <tr>
+        <td colspan=2><h1><a hef='www.hanee.com'>License Plate Recognition Test</a></h1></td>
+        <td><a href='/help.html?ver=0.007996558325123804'>HELP</a></td>
+    </tr>
+    <tr>
+        <td colspan=3>
+        PSP (Python server page, python jsp ) demo page<br>
         <a  target="_blank" href="http://github.com/jangsooyoung/psp">github.com/jangsooyoung/psp</a>
         </td>
-	</tr>
-	<tr>
-		<td colspan=3>
-			<a href='/index.psp?image=<%=display_image%>'>
-				<img src='<%=display_image%>' width=600  /></a>
-			<br>
-		</td>
-	</tr> 
-	<tr>
-		<td colspan=2><font size=2>-High resolution cell phone cameras. (Plate part is recommended at least 300 pix)</font>
-		</td>
-	</tr>
-	<tr>
-		<td><h2><font size=6>Result : <%=find_process(PspConfig.img_path+"/"+display_image)%></font>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="File" name="upfile"/>[jpg file]
-		</td>
-		<td>
-			<input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="upload" name="upload" />
-		</td>
-	</tr>
+    </tr>
+    <tr>
+        <td colspan=3>
+            <a href='/index.psp?image=<%=display_image%>'>
+                <img src='<%=display_image%>' width=600  /></a>
+            <br>
+        </td>
+    </tr> 
+    <tr>
+        <td colspan=2><font size=2>-High resolution cell phone cameras. (Plate part is recommended at least 300 pix)</font>
+        </td>
+    </tr>
+    <tr>
+        <td><h2><font size=6><div id="car_plate_no">Result:wait...</div> </font>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="file" style="WIDTH:200pt;HEIGHT:20pt"  value="File" name="upfile"/>[jpg file]
+        </td>
+        <td>
+            <input type="submit" style="WIDTH:120pt;HEIGHT:20pt"  value="upload" name="upload" />
+        </td>
+    </tr>
 </table>
 </form>
 <hr>
@@ -119,19 +101,14 @@ elif "image" in args:
 <%
 file_list = os.listdir(PspConfig.img_path + "/car/")
 for fname in [file for file in file_list if file.endswith(".jpg")]:%><%{%>
-	<li><font size=1>
-			<a href="/index.psp?image=/car/<%=fname%>">[<%=fname%>]</a>
-				&nbsp;&nbsp;
-			<a href="javascript:del('/car/<%=f'{fname}'%>')">d</a>
-		</font>
-	</li>
+    <li><font size=1>
+            <a href="/index.psp?image=/car/<%=fname%>">[<%=fname%>]</a>
+                &nbsp;&nbsp;
+            <a href="javascript:del('/car/<%=f'{fname}'%>')">d</a>
+        </font>
+    </li>
 <%}%>
 </ul>
 </hr>
 </body>
 </html>
-<%
-
-%>
-
-
