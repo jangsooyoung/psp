@@ -1,4 +1,4 @@
-<%!
+<%
 import os.path
 import glob
 from pspconfig import PspConfig 
@@ -16,19 +16,22 @@ s = http_handler.getSession()
 if "cnt" not in s:
     s["cnt"] = 0
 s["cnt"] += 1
-display_image="car/default.jpg"
+display_image="default.jpg"
+
 if "del" in args:
     file_name=args["del"]
-    print('del', PspConfig.img_path + file_name)
-    if os.path.isfile(PspConfig.img_path + file_name):
-        os.remove(PspConfig.img_path  + file_name)
-        print('remove', PspConfig.img_path + file_name)
+    print('del', PspConfig.img_path + "/" +file_name)
+    if os.path.isfile(PspConfig.img_path + "/" +file_name):
+        os.remove(PspConfig.img_path  + "/" +file_name)
+        print('remove', PspConfig.img_path + "/" +file_name)
+
 elif "upfile" in args:
     filename = args['upfile'].filename
     if filename != '':
         data = args['upfile'].file.read()
         open(PspConfig.upload_path  + "/" + filename, "wb").write(data)
-        display_image="car/" +filename
+        display_image=filename
+
 elif "image" in args:
     display_image=args["image"]
 %>
@@ -39,12 +42,13 @@ function del(fname) {
         location.href='/index.psp?del='+fname;
     } 
 }
-function car_no_find() {
+window.onload = function () {
 	try {
 	$.ajax({
-		url:"/carno.psp", 
-		type:'POST',
-		data: {image:"<%=display_image%>"},
+		url:'/carno.psp', 
+		data: {image:'<%=display_image%>'},
+		type:"GET",
+		method:"GET",
     	success: function(data){$("#car_plate_no").html(data);}
 		});
 	} catch (ex) {
@@ -52,7 +56,7 @@ function car_no_find() {
 	}
 }
 </script>
-<body onload="car_no_find();" >
+<body>
 <hr>
 <ul>
 <form ENCTYPE="multipart/form-data"  action='/index.psp' method="post"  >
@@ -79,7 +83,7 @@ function car_no_find() {
         </td>
     </tr>
     <tr>
-        <td><h2><font size=6><div id="car_plate_no">Result:wait...</div> </font>
+        <td><h2><font size=6><div id="car_plate_no">Result:wait...10 sec(this is too old pc)</div> </font>
         </td>
         <td>
         </td>
@@ -99,12 +103,12 @@ function car_no_find() {
 <hr>
 <ul>
 <%
-file_list = os.listdir(PspConfig.img_path + "/car/")
+file_list = os.listdir(PspConfig.img_path)
 for fname in [file for file in file_list if file.endswith(".jpg")]:%><%{%>
     <li><font size=1>
-            <a href="/index.psp?image=/car/<%=fname%>">[<%=fname%>]</a>
+            <a href="/index.psp?image=<%=fname%>">[<%=fname%>]</a>
                 &nbsp;&nbsp;
-            <a href="javascript:del('/car/<%=f'{fname}'%>')">d</a>
+            <a href="javascript:del('<%=f'{fname}'%>')">d</a>
         </font>
     </li>
 <%}%>

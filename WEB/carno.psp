@@ -36,8 +36,9 @@ def find_process(file_name):
     return "처리중 오류가 발생했습니다."
 %><%
 plate_no_text='no image'
+print('args', args)
 if "image" in args:
     display_image=args["image"]
     plate_no_text=find_process(PspConfig.img_path+"/"+display_image)
-    print(plate_no_text)
+    print('carno.psp>>>>>', plate_no_text)
 %><%=plate_no_text%>
